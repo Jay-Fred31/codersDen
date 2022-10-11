@@ -1,2 +1,0 @@
-# codersDen
-All Javascript Assignments
