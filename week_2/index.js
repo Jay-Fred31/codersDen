@@ -194,10 +194,13 @@ conjunctionStr.match(/because/gi).length;
 
 // 4. Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
 
-let currency = 'euro';
-let annualSalary = 5000 * 12;
-let annualBonus = 10000;
-let annualOnlineCourse = 15000 * 12;
+let sentence2 =
+  "He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.";
+let currency = "euro";
+let amountEarned = sentence2.match(/\d+/g);
+let annualSalary = Number(amountEarned[0]) * 12;
+let annualBonus = Number(amountEarned[1]);
+let annualOnlineCourse = Number(amountEarned[2]) * 12;
 
 let totalAnnualIncome = annualSalary + annualBonus + annualOnlineCourse;
 
