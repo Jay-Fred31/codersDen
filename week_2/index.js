@@ -134,8 +134,7 @@ Math.ceil(parseFloat("9.8"));
 // 5. Check if 'on' is found in both python and jargon
 let lang1 = 'python';
 let lang2 = 'jargon';
-console.log(lang1.includes('on'));
-console.log(lang2.includes('on'));
+console.log(lang1.includes("on")&&lang2.includes("on"));
 
 // 6. I hope this course is not full of jargon. Check if jargon is in the sentence.
 
