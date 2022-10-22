@@ -132,25 +132,25 @@ console.log(Date.now());
 
 // 1. Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
 
-let base = prompt('Please enter base');
-let height = prompt('Please enter height');
+let base = Number(prompt('Please enter base'));
+let height = Number(prompt('Please enter height'));
 let area = 0.5 * base * height
 console.log(`The area of the Triange is ${area}`);
 
 
 // 2. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
 
-let sideA = prompt('Please enter  a');
-let sideB = prompt('Please enter b');
-let sideC = prompt('Please enter  c');
+let sideA = Number(prompt('Please enter  a'));
+let sideB = Number(prompt('Please enter b'));
+let sideC = Number(prompt('Please enter  c'));
 let perimeter = sideA + sideB + sideC;
 console.log(`The perimeter of the triangle is ${perimeter}`)
 
 
 // 3. Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
 
-let length = prompt('Please enter length', 'length goes here');
-let width = prompt('Please enter width', 'width goes here');
+let length = Number(prompt('Please enter length', 'length goes here'));
+let width = Number(prompt('Please enter width', 'width goes here'));
 
 let areaOfRectangle = length * width;
 let perimeter2 = 2 * (length + width);
@@ -162,7 +162,7 @@ console.log(`The Area of the triangle is ${areaOfRectangle} and the perimeter is
 
 
 const pi = 3.14;
-let radius = prompt('Please enter radius');
+let radius = Number(prompt('Please enter radius'));
 let areaOfCircle = pi * radius * radius;
 let circumferenceOfCircle = 2 * pi * radius;
 console.log(`The area of the circle is ${areaOfCircle} and the circumference of the circle is ${circumferenceOfCircle}`);
@@ -170,11 +170,16 @@ console.log(`The area of the circle is ${areaOfCircle} and the circumference of 
 
 // 5. Calculate the slope, x-intercept and y-intercept of y = 2x -2
 // y = mx + b, where m => slope.
-let m = "slope";
-let m1 = 2;
+let m = 2;
+
 
 // 6. Slope is m = (y2-y1)/(x2-x1). Find the slope between point (2, 2) and point(6,10)
-let m2 = (10 - 2) / (6 - 2);
+let x1 = 2;
+let x2 = 6;
+let y1 = 2;
+let y2 = 10;
+let m2 = (y2 -y1)/(x2 -x1);
+m2 = (10 - 2) / (6 - 2);
 console.log(m2);
 
 // 7. Compare the slope of above two questions.
@@ -182,7 +187,8 @@ console.log(m1 === m2);
 
 // 8. Calculate the value of y (y = x2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
 
-let x = prompt('please enter x');
+let valueEntered = prompt('please enter x');
+let x = Number(valueEntered);
 
 let y = (x**2) + 6 * x + 9;
 console.log(y);
@@ -239,3 +245,36 @@ console.log(
 
 
 // 14. 
+// Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+
+let numberOfYears = Number(prompt('Enter number of years'));
+let yearsInSeconds = numberOfYears * 60 * 60 * 24 * 365;
+console.log(`You lived ${yearsInSeconds} seconds.`);
+
+
+// 15.Create a human readable time format using the Date time object
+
+let dateNow = new Date();
+let dateYear = dateNow.getFullYear();
+let dateMonth = dateNow.getMonth() +1;
+let dateDay = dateNow.getDate();
+let hoursToday = dateNow.getHours();
+let minutesToday = dateNow.getHours();
+
+// YYYY-MM-DD HH:mm
+console.log(`${dateYear}-${dateMonth}-${dateDay} ${hoursToday}:${minutesToday}`);
+// DD-MM-YYYY HH:mm
+console.log(
+  ` ${dateDay}-${dateMonth}-${dateYear} ${hoursToday}:${minutesToday}`
+);
+// DD/MM/YYYY HH:mm
+console.log(
+  ` ${dateDay}/${dateMonth}/${dateYear} ${hoursToday}:${minutesToday}`
+);
+
+
+// 16. Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05 )
+// YYY-MM-DD HH:mm eg. 20120-01-02 07:05
+console.log(
+  `${dateYear}-${dateMonth}-${dateDay} ${"00" +hoursToday.split(2)}:${"00" +minutesToday.split(2)}`
+);
